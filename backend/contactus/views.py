@@ -11,24 +11,32 @@ from .serializers import ContactusSerializer
 
 # Create your views here.
 
-# @api_view(['GET'],['POST'])
-# @permission_classes([AllowAny])
-# def get_all_contactus(request):
-    
-#     if request.method == 'GET' : 
-#         contacts = ContactUs.objects.all()
-#         serializer = ContactUsSerializer(contacts, many=True)
-#         return Response(serializer.data)
-    
-#     elif request.method == 'POST' :
-#          serializer = ContactUsSerializer(data = request.data)
-#          serializer.is_valid(raise_exception = True)
-#          serializer.save()
-#          return Response(serializer.data, status = status.HTTP_201_CREATED)
-
-@api_view(['GET'])
+@api_view(['GET','POST'])
 @permission_classes([AllowAny])
 def get_all_contactus(request):
-    contacts = ContactUs.objects.all()
-    serializer = ContactusSerializer(contacts, many=True)
-    return Response(serializer.data)
+    
+    if request.method == 'GET' : 
+        contacts = ContactUs.objects.all()
+        serializer = ContactusSerializer(contacts, many=True)
+        return Response(serializer.data)
+    
+    elif request.method == 'POST' :
+         serializer = ContactusSerializer(data = request.data)
+         serializer.is_valid(raise_exception = True)
+         serializer.save()
+         return Response(serializer.data, status = status.HTTP_201_CREATED)
+
+# @api_view(['GET'])
+# @permission_classes([AllowAny])
+# def get_all_contactus(request):
+#     contacts = ContactUs.objects.all()
+#     serializer = ContactusSerializer(contacts, many=True)
+#     return Response(serializer.data)
+
+# @api_view(['POST'])
+# @permission_classes([AllowAny])
+# def post_contactus(request):
+#     serializer = ContactusSerializer(data = request.data)
+#     serializer.is_valid(raise_exception = True)
+#     serializer.save()
+#     return Response(serializer.data, status = status.HTTP_201_CREATED)
