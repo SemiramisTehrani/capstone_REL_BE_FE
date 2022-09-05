@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cars.apps.CarsConfig',  # This app is for example use only
     'contactus',             # This app added by Semi
     'consultation',          # This app is added by Semi
+    'autoemail',             # This app is added by Semi
 ]
 
 MIDDLEWARE = [
