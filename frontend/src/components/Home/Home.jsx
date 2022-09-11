@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Table } from 'react-bootstrap';
-import './home.css';
+import './Home.css';
 
 function Home(props) {
     return(
@@ -12,6 +12,7 @@ function Home(props) {
             </Col>
             <hr></hr>
             <Col className="services"><h1>Our Services</h1> 
+
             <p></p>
             </Col>
             <hr></hr>

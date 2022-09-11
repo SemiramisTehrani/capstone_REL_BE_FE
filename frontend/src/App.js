@@ -16,14 +16,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import LoginPage from "./pages/LoginPage/LoginPage";
 // import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
-import Home from "./Components/Home/Home";
-import LoginForm from "./Components/LoginForm/LoginForm";
-import RegistrationForm from "./Components/RegistrationForm/RegistrationForm";
+import Home from "./components/Home/Home";
+import LoginForm from "./components/LoginForm/LoginForm";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
 
 
 // Component Imports
-import NavBar from "./Components/NavBar/NavBar";
-import Footer from "./Components/Footer/Footer";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 
 

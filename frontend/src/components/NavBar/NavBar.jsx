@@ -6,9 +6,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
-import './Navbar.css';
-import { Link } from 'react-router-dom'
-
+import './NavBar.css';
+// import { Link } from 'react-router-dom';   09/11/2022 removed
 
 
 // const NavBar = (props) => {
