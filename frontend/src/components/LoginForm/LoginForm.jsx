@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from "react";
-import "./LoginForm.css";
-import axios from "axios";
-import { Link, Route, Routes } from "react-router-dom";
-import RegistrationForm from "../RegistrationForm/RegistrationForm";
+// import React, { useState, useEffect } from "react";
+// import "./LoginForm.css";
+// import axios from "axios";
+// import { Link, Route, Routes } from "react-router-dom";
+// import RegistrationForm from "../RegistrationForm/RegistrationForm";
 
-const LoginForm = (props) => {
+// const LoginForm = (props) => {
 
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+//   const [userName, setUserName] = useState("");
+//   const [password, setPassword] = useState("");
 
 
-  async function loginUser(userInfo) {
-    let response = await axios.post(
-      "http://127.0.0.1:8000/api/auth/login/", userInfo);
-    console.log(response);
-    localStorage.setItem('token', response.data.access);
-    window.location = '/';
-  }
+//   async function loginUser(userInfo) {
+//     let response = await axios.post(
+//       "http://127.0.0.1:8000/api/auth/login/", userInfo);
+//     console.log(response);
+//     localStorage.setItem('token', response.data.access);
+//     window.location = '/';
+//   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    let userInfo = {
-      username: userName,
-      password: password,
-    };
-    props.setStoredUserName(userInfo.username)
-    loginUser(userInfo);
-  }
+//   function handleSubmit(event) {
+//     event.preventDefault();
+//     let userInfo = {
+//       username: userName,
+//       password: password,
+//     };
+//     props.setStoredUserName(userInfo.username)
+//     loginUser(userInfo);
+//   }
 
   return (
     <div className="login-form">

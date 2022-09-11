@@ -1,3 +1,5 @@
+// Semi 9/11/2022 : Footer is done
+
 import "./Footer.css";
 
 const Footer = () => {
