@@ -1,5 +1,6 @@
 
-/* 09/11/2022 : Semi , started contact us  */
+/* 09/11/2022 : Semi , started contact us  : running but messy*/
+
 
 .container{
     width: 50vw;
@@ -40,18 +41,11 @@ box-shadow: -5px 5px 0px 3px rgba(0, 0, 0, 0.250);
         outline-color: #FFD6BA;
     }
 
-    label[for="firstName"]{
+    label[for="fullName"]{
         position: absolute;
         top: -30px;
         left: 0;
-    }
-
-    label[for="lastName"]{
-        position: absolute;
-        top: -30px;
-        right: 190px;
-    }
-    
+    }    
 }
 
 .email{
