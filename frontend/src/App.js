@@ -24,11 +24,28 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 
 
 //Util Imports
-import PrivateRoute from "./utils/PrivateRoute";
+// import PrivateRoute from "./utils/PrivateRoute";
+
+
+function App() {
+  return (
+    <div className="App">
+      <Home />
+      <ContactUs />
+
+    </div>
+  );
+}
+
+export default App;
+
+
+
 
 // function App() {
 //   return (
@@ -54,40 +71,44 @@ import PrivateRoute from "./utils/PrivateRoute";
 // export default App;
 
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar/>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Home/>
-          }
-        />
-        <Route
-          path="home"
-          element={() => {
-            <LoginForm />;
-            }
-            }
 
-        />
-        <Route
-          path="loginform/*"
-          element={
-            <LoginForm />
-          }
-        />
-        <Route
-          exact
-          path="loginform/registration"
-          element={<RegistrationForm/>}
-        />
-      </Routes>
-    </div>
-  );
-}
 
-export default App;
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <NavBar/>
+//       <Routes>
+//         <Route
+//           exact
+//           path="/"
+//           element={
+//             <Home/>
+//           }
+//         />
+//         <Route
+//           path="home"
+//           element={() => {
+//             <LoginForm />;
+//             }
+//             }
+
+//         />
+//         <Route
+//           path="loginform/*"
+//           element={
+//             <LoginForm />
+//           }
+//         />
+//         <Route
+//           exact
+//           path="loginform/registration"
+//           element={<RegistrationForm/>}
+//         />
+//       </Routes>
+//     </div>
+//   );
+// }
+
+// export default App;
