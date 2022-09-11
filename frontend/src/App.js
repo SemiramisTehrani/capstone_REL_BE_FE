@@ -5,16 +5,20 @@ import React, { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
 
+
+// leftover from youtube 
 //import {} from "./localKey_Semi";
 import {KEY} from "./localKey.js";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 // Pages Imports
 // import HomePage from "./pages/HomePage/HomePage";
 // import LoginPage from "./pages/LoginPage/LoginPage";
 // import RegisterPage from "./pages/RegisterPage/RegisterPage";
+
 
 import Home from "./components/Home/Home";
 import LoginForm from "./components/LoginForm/LoginForm";
@@ -140,7 +144,7 @@ function App() {
         <Route
           exact
           path="loginform/registration"
-          element={<RegistrationForm />}
+          element={<RegistrationForm/>}
         />
       </Routes>
     </div>
