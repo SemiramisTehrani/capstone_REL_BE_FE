@@ -8,7 +8,7 @@ function Home(props) {
             <Container className="container-home">
             <Col className="aboutus"><h1>About Us</h1> 
             <p> We are Experienced and Creative Electrical Engineering team with extensive expertise in Design, Product Development,</p>
-            <p>Manufacturing, Program Management, Reliability , Test/Characterization, and Project/People management.</p>
+            <p>Manufacturing, Program Management, Reliability , Test/Characterization, and People management.</p>
             </Col>
             <hr></hr>
             <Col className="services"><h1>Our Services</h1> 
