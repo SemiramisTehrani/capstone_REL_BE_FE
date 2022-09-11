@@ -1,3 +1,53 @@
+import React from 'react';
+import { Container, Col, Table } from 'react-bootstrap';
+import './home.css';
+
+function Home(props) {
+    return(
+        <div>
+            <Container className="container-home">
+            <Col className="aboutus"><h1>About Us</h1> 
+            <p> We are Experienced and Creative Electrical Engineering team with extensive expertise in Design, Product Development,</p>
+            <p>Manufacturing, Program Management, Test/Characterization, and People management</p>
+            </Col>
+            <hr></hr>
+            <Col className="services"><h1>Our Services</h1> 
+            <p></p>
+            </Col>
+            <hr></hr>
+            </Container>
+        </div>
+    )
+}
+
+export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React, { useEffect } from "react";
 // import VideoPlayer from "../VideoPlayer/VideoPlayer";
 // import RelatedVideos from "../RelatedVideos/RelatedVideos";
