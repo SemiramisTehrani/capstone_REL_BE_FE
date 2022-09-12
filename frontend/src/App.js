@@ -25,6 +25,7 @@ import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import ContactUs from "./components/ContactUs/ContactUs";
+import Autoemail from "./components/AutoEmail/AutoEmail";
 
 
 
@@ -35,8 +36,11 @@ import ContactUs from "./components/ContactUs/ContactUs";
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Home />
       <ContactUs />
+      <Autoemail />
+
 
     </div>
   );
