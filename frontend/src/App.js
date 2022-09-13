@@ -26,6 +26,8 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Autoemail from "./components/AutoEmail/AutoEmail";
+import FullStackDevelopment from "./components/FullStackDevelopment/FullStackDevelopment";
+import Electronics from "./components/Electronics/Electronics";
 
 
 
@@ -40,6 +42,8 @@ function App() {
       <Home />
       <ContactUs />
       <Autoemail />
+      <FullStackDevelopment/>
+      <Electronics/>
 
 
     </div>
