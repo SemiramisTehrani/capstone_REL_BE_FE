@@ -7,7 +7,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-// 09/11/2022 : Semi Pages Imports I am not sure if I want to use these pages. 
+// 09/11/2022 : Pages Imports I am not sure if I want to use these pages.moving them to component.
 // import HomePage from "./pages/HomePage/HomePage";
 // import LoginPage from "./pages/LoginPage/LoginPage";
 // import RegisterPage from "./pages/RegisterPage/RegisterPage";
