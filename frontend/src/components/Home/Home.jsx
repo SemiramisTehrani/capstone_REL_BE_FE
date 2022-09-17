@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Col, Table } from 'react-bootstrap';
+import { Container, Col, Table, Row } from 'react-bootstrap';
 import './Home.css';
+// import {NavBar} from './../NavBar/NavBar.jsx';
 
 function Home(props) {
     return(
@@ -13,7 +14,6 @@ function Home(props) {
             <hr></hr>
             <Col className="services"><h1>Our Services</h1> 
 
-            <p></p>
             </Col>
             <hr></hr>
             </Container>

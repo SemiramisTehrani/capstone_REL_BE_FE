@@ -28,6 +28,7 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import Autoemail from "./components/AutoEmail/AutoEmail";
 import FullStackDevelopment from "./components/FullStackDevelopment/FullStackDevelopment";
 import Electronics from "./components/Electronics/Electronics";
+import Services from "./components/Services/Services";
 
 
 
@@ -39,11 +40,14 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Home />
-      <ContactUs />
-      <Autoemail />
-      <FullStackDevelopment/>
-      <Electronics/>
+      <Routes>
+          <Route index element={<Home />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/fullstackdevelopment" element={<FullStackDevelopment/>} />
+          <Route path="/electronics" element={<Electronics/>} />
+          <Route path="/services" element={<Services/>} />
+      </Routes>
+      {/* <Autoemail /> */}
 
 
     </div>

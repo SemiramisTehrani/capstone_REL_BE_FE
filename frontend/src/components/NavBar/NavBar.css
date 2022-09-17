@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  padding: 0;
 }
 
 li {
@@ -37,9 +38,25 @@ li {
   color: #ffd6a7;
   cursor: pointer;
   font-size: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto 1fr auto auto auto;
+  width: 100%;
 }
 
+.navBar {
+  background-color: rgb(121, 174, 200);
+}
 
+.NavButton {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.NavButton:hover {
+  color: rgb(179, 249, 255);
+}
 
 /* ul {
   display: flex;

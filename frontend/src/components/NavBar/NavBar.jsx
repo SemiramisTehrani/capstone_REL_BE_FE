@@ -5,12 +5,12 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './NavBar.css';
+// import Home from "./components/Home/Home";
+
 
 
 const NavBar = () => {
-    return (
-
-      
+    return ( 
       <div className="navBar">
         <header> 
         <title>Rose Electronics Lab</title>
@@ -19,23 +19,26 @@ const NavBar = () => {
 
         <ul>
           <li className="brand">
-            <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/home" className='NavButton'>
               <b>Home</b>
             </Link>
-            <Link to="/aboutus" style={{ textDecoration: "none", color: "white" }}>
-              <b>AboutUs</b>
+            <Link to="/aboutus" className='NavButton'>
+              <b>About</b>
             </Link>
-            <Link to="/services" style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/services" className='NavButton'>
               <b>Services</b>
             </Link>
-            <Link to="/contactus" style={{ textDecoration: "none", color: "white" }}>
-              <b>ContactUs</b>
+            <div>
+              &nbsp;
+            </div>
+            <Link to="/contactus" className='NavButton'>
+              <b>Contact</b>
             </Link>
-            <Link to="/register" style={{ textDecoration: "none", color: "white" }}>
-              <b>RegisterationFrom</b>
+            <Link to="/register" className='NavButton'>
+              <b>Registeration</b>
             </Link>
-            <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
-              <b>LoginForm</b>
+            <Link to="/login" className='NavButton'>
+              <b>Login</b>
             </Link>
           </li>
         </ul>
