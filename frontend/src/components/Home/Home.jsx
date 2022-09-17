@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Col, Table, Row } from 'react-bootstrap';
+import About from '../About/About';
+import Services from '../Services/Services';
 import './Home.css';
 // import {NavBar} from './../NavBar/NavBar.jsx';
 
@@ -7,15 +9,8 @@ function Home(props) {
     return(
         <div>
             <Container className="container-home">
-            <Col className="aboutus"><h1>About Us</h1> 
-            <p> We are Experienced and Creative Electrical Engineering team with extensive expertise in Design, Product Development,</p>
-            <p>Manufacturing, Program Management, Reliability , Test/Characterization, and People management.</p>
-            </Col>
-            <hr></hr>
-            <Col className="services"><h1>Our Services</h1> 
-
-            </Col>
-            <hr></hr>
+            <About></About>
+            <Services></Services>
             </Container>
         </div>
     )

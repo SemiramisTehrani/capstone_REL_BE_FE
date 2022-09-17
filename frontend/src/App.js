@@ -29,6 +29,7 @@ import Autoemail from "./components/AutoEmail/AutoEmail";
 import FullStackDevelopment from "./components/FullStackDevelopment/FullStackDevelopment";
 import Electronics from "./components/Electronics/Electronics";
 import Services from "./components/Services/Services";
+import About from "./components/About/About";
 
 
 
@@ -39,9 +40,11 @@ import Services from "./components/Services/Services";
 function App() {
   return (
     <div className="App">
+
       <NavBar />
       <Routes>
           <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/fullstackdevelopment" element={<FullStackDevelopment/>} />
           <Route path="/electronics" element={<Electronics/>} />

@@ -1,8 +1,37 @@
 .service-images {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 400px));*/
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    overflow-x: hidden;
+}
+
+.services > h1 {
+    text-align: center;
+}
+
+.service {
+    border: 1px black solid;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    transition: 0.2s;
+}
+
+.service:hover {
+
 }
 
 .service > img {
+    width: 100%;
+    object-fit: cover;
+}
 
+.service > p {
+    text-decoration: none;
+    color: black;
+}
+
+.service, a {
+    text-decoration: none;
 }

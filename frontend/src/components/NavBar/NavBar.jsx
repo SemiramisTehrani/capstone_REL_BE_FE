@@ -13,16 +13,16 @@ const NavBar = () => {
     return ( 
       <div className="navBar">
         <header> 
-        <title>Rose Electronics Lab</title>
+        Rose Electronics Lab
         </header>
         <hr></hr>
 
         <ul>
           <li className="brand">
-            <Link to="/home" className='NavButton'>
+            <Link to="/" className='NavButton'>
               <b>Home</b>
             </Link>
-            <Link to="/aboutus" className='NavButton'>
+            <Link to="/about" className='NavButton'>
               <b>About</b>
             </Link>
             <Link to="/services" className='NavButton'>
@@ -35,7 +35,7 @@ const NavBar = () => {
               <b>Contact</b>
             </Link>
             <Link to="/register" className='NavButton'>
-              <b>Registeration</b>
+              <b>Registration</b>
             </Link>
             <Link to="/login" className='NavButton'>
               <b>Login</b>
