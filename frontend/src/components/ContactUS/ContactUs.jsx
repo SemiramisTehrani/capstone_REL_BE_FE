@@ -20,6 +20,22 @@ function Contactus() {
                 subject : subjectRef.current.value,
                 message: messageRef.current.value
             }
+            const url = 'http://127.0.0.1:8000/api/contactus/add'
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                // Once the backend has received and sent back a response
+                console.log(response)
+            })
+            .catch(err => {
+                // If there is an error in the process
+
+            })
             alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎")
         }
     
@@ -28,7 +44,6 @@ function Contactus() {
         <div  className="container">
             <h1>Contact us</h1>
             <form onSubmit={handleSubmit} className="form">
-                <div className="fullname">
                     <label for="fullName" id="fullnameLabel">Full Name</label>
                     <input
                         type="text" 
@@ -38,7 +53,9 @@ function Contactus() {
                         ref={fullNameRef} 
                         tabindex="1" 
                     />
-                </div>
+                {/*<div className="fullname">
+                    
+    </div>*/}
                 
                 <label for="email">Email</label>
                 <input 

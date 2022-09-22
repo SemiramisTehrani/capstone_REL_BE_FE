@@ -9,70 +9,76 @@
     /*-webkit-box-shadow: -5px 5px 0px 1px rgba(0, 0, 0, 0.250); 
 box-shadow: -5px 5px 0px 3px rgba(0, 0, 0, 0.250);
     */
-    h1{
-        text-align: center;
-        margin: 30px 0;
-    }
+}
+h1{
+    text-align: center;
+    margin: 30px 0;
 }
 
 .form{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /*flex-direction: column;*/
+    grid-template-columns: auto 1fr;
     
+}
+
+input, textarea {
+    width: 100%;
 }
 
 
 .fullname{
-    margin: 25px auto;
+    /*margin: 25px auto;*/
     display: flex;
     position: relative;
     justify-content: space-between;
     width: 90%;
-    height: 40px;
-    
-    input[type="text"]{
-        width: 40%;
-        margin: 0 20px 0 0;
-        padding: 15px;
-        font-style: italic;    
-        border: 2px solid #434753;
-        background: transparent;
-        color: #434753;
-        outline-color: #FFD6BA;
-    }
-
-    label[for="fullName"]{
-        position: absolute;
-        top: -30px;
-        left: 0;
-    }    
+    height: 40px;    
+}
+    /*
+input[type="text"]{
+    width: 40%;
+    margin: 0 20px 0 0;
+    padding: 15px;
+    font-style: italic;    
+    border: 2px solid #434753;
+    background: transparent;
+    color: #434753;
+    outline-color: #FFD6BA;
 }
 
+label[for="fullName"]{
+    position: absolute;
+    top: -30px;
+    left: 0;
+}*/
+
 .email{
-    width: 50%;
-    margin: 0 0 20px 35px;
+    /*width: 50%;*/
+    /*margin: 0 0 20px 35px;*/
     height: 40px;
     padding: 15px;
     font-style: italic;
-    border: 2px solid #434753;
-    background: transparent;
+    /*border: 2px solid #434753;*/
+    /*background: transparent;*/
     color: #434753;
     outline-color: #FFD6BA;
 
 }
 
 label:not(#nameLabel){
-    margin-left: 35px ;
+    margin-left: 5px ;
     margin-bottom: 10px;
 }
 
 .message{
-    width: 80%;
-    margin: 0 35px;
+    /*width: 80%;*/
+    /*margin: 0 35px;*/
+    margin: 5px;
     height: 100px;
     padding: 15px;
     font-style: italic;
-    border: 2px solid #434753;
+    /*border: 2px solid #434753;*/
     background: transparent;
     color: #434753;
     outline-color: #FFD6BA;
@@ -82,8 +88,11 @@ label:not(#nameLabel){
     width: 100px;
     margin: 30px 35px;
     height: 40px;
-    border: none;
+    grid-column-start: 1;
+    grid-column-end:3;
+    /*border: none;*/
     background: #434753;
     color: #FFD6BA;
     cursor: pointer;
+    place-self: center;
 }

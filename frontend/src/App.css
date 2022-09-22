@@ -8,6 +8,12 @@
   box-sizing: inherit;
 }
 
+.App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;

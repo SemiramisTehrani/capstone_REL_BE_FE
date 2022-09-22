@@ -47,7 +47,9 @@ li {
 .brand {
   color: #ffd6a7;
   cursor: pointer;
-  font-size: 2rem;
+  font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  font-size: 14px;
+  /* font-size: 2rem; */
   display: grid;
   grid-template-columns: auto auto auto 1fr auto auto auto;
   width: 100%;
@@ -55,6 +57,7 @@ li {
 
 .navBar {
   background-color: rgb(121, 174, 200);
+  color :rgb(245,221,93)
 }
 
 .NavButton {

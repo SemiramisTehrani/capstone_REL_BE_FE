@@ -7,8 +7,9 @@ function About(props) {
         <div>
             <Container className="container-about">
             <Col className="aboutus"><h1>About Us</h1> 
-            <p> We are Experienced and Creative Electrical Engineering team with extensive expertise in Design, Product Development,</p>
-            <p>Manufacturing, Program Management, Reliability , Test/Characterization, and People management.</p>
+            <p> We are Experienced and Creative Electrical Engineering team with extensive expertise in Design, Product Development,
+                Manufacturing, Program Management, Reliability , Test/Characterization, and People management.
+            </p>
             </Col>
             </Container>
         </div>

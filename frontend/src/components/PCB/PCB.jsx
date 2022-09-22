@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, Col, Table } from 'react-bootstrap';
-import './Electronics.css';
+import './PCB.css';
 
-function Electronics(props) {
+
+function PCB(props) {
     return(
         <div>
-            <Container className="container-electronics">
-            <Col className="electronics"><h1>Electronics and Simulation</h1>
+            <Container className="container-pcb">
+            <Col className="pcb_layout"><h1>PCB/Layout</h1>
             <hr></hr>  
             <p>We develop both front-end (client side) and back-end (server side) portions of web application.
             We have the ability to design complete web applications and websites. We work on the frontend, backend, database
@@ -21,4 +22,4 @@ function Electronics(props) {
     )
 }
 
-export default Electronics;
+export default PCB;

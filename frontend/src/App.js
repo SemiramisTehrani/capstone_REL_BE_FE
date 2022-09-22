@@ -30,8 +30,8 @@ import FullStackDevelopment from "./components/FullStackDevelopment/FullStackDev
 import Electronics from "./components/Electronics/Electronics";
 import Services from "./components/Services/Services";
 import About from "./components/About/About";
-
-
+import PCB from "./components/PCB/PCB";
+import Contactus from "./components/ContactUs/ContactUs";
 
 //Util Imports
 // import PrivateRoute from "./utils/PrivateRoute";
@@ -49,9 +49,13 @@ function App() {
           <Route path="/fullstackdevelopment" element={<FullStackDevelopment/>} />
           <Route path="/electronics" element={<Electronics/>} />
           <Route path="/services" element={<Services/>} />
+          <Route path="/pcb_layout" element={<PCB />} />
+          <Route path="/contactus" element={<Contactus />} />
       </Routes>
       {/* <Autoemail /> */}
 
+      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );
