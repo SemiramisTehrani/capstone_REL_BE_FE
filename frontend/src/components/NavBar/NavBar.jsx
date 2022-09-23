@@ -17,7 +17,7 @@ const NavBar = () => {
         </header>
         <hr></hr>
 
-        <ul>
+        <ul className='navBarList'>
           <li className="brand">
             <Link to="/" className='NavButton'>
               <b>Home</b>
@@ -34,7 +34,7 @@ const NavBar = () => {
             <Link to="/contactus" className='NavButton'>
               <b>Contact</b>
             </Link>
-            <Link to="/register" className='NavButton'>
+            <Link to="/registration" className='NavButton'>
               <b>Registration</b>
             </Link>
             <Link to="/login" className='NavButton'>

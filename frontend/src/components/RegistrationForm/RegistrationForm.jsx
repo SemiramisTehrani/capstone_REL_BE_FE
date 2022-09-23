@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
 
-const RegisterForm = () => {
-  const { registerUser } = useContext(AuthContext);
+const RegistrationForm = () => {
+ //const { registerUser } = useContext(AuthContext);
+  const registerUser = useContext(AuthContext);
+  console.log("AuthContext", AuthContext)
+  console.log("Register User", registerUser)
   const defaultValues = {
     username: "",
     email: "",
@@ -11,23 +14,15 @@ const RegisterForm = () => {
     firstName: "",
     lastName: "",
   };
-  const [formData, handleInputChange, handleSubmit] = useCustomForm(
-    defaultValues,
-    registerUser
+  const {formData, handleInputChange, handleSubmit} = useCustomForm(
+    registerUser,
+    defaultValues
   );
 
   return (
     <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
-        </label>
+      <form className="form registrationForm" onSubmit={handleSubmit}>
+        
         <label>
           First Name:{" "}
           <input
@@ -56,11 +51,22 @@ const RegisterForm = () => {
           />
         </label>
         <label>
-          Password:{" "}
+          Username:{" "}
           <input
             type="text"
+            name="username"
+            value={formData.username}
+            autoComplete="username"
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Password:{" "}
+          <input
+            type="password"
             name="password"
             value={formData.password}
+            autoComplete="new-password"
             onChange={handleInputChange}
           />
         </label>
@@ -74,4 +80,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default RegistrationForm;

@@ -53,7 +53,7 @@ function App() {
           
           <Route path="/contactus" element={<Contactus />} />
           
-          <Route path="/registeration" element={<RegistrationForm />} />
+          <Route path="/registration" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
       </Routes>
       {/* <Autoemail /> */}

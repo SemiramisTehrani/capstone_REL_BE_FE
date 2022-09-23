@@ -4,8 +4,7 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 
 const AuthContext = createContext();
-
-export default AuthContext;
+console.log("a")
 
 function setUserObject(user) {
   if (!user) {
@@ -91,3 +90,6 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
   );
 };
+
+
+export default AuthContext;

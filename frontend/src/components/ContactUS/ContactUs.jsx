@@ -6,6 +6,8 @@
 import React, { useRef} from 'react'
 import './ContactUs.css';
 
+import axios from 'axios'
+
 function Contactus() {
 
         const fullNameRef = useRef(null)
@@ -16,12 +18,13 @@ function Contactus() {
         const handleSubmit = (event) => {
             event.preventDefault()
             const data = {
-                fullName: fullNameRef.current.value,
+                fullname: fullNameRef.current.value,
                 email: emailRef.current.value,
                 subject : subjectRef.current.value,
                 message: messageRef.current.value
             }
-            const url = 'http://127.0.0.1:8000/api/contactus/add'
+            console.log(data)
+            const url = 'http://127.0.0.1:8000/api/contactus/add/'
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -44,7 +47,7 @@ function Contactus() {
         
         <div  className="container">
             <h1>Contact us</h1>
-            <form onSubmit={handleSubmit} className="form">
+            <form onSubmit={handleSubmit} className="form contact_form">
                     <label for="fullName" id="fullnameLabel">Full Name</label>
                     <input
                         type="text" 

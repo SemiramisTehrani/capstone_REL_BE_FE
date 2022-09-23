@@ -22,20 +22,23 @@ function PCB(props) {
             </p> 
             
             
-            <ul class="a">  
-            <li>Turn-key board design and board layout services</li>
-            <li>Prototyping to medium rate production</li>
-            <li>Design for test</li>
-            <li>High density PCB design capabilities</li>
-            <li>High speed capabilities</li>
-            <li>Small form factor</li>
-            <li>Low power expertise</li>
-            <li>Extensive video/camera interfaces</li>
-            <li>Extensive comm interfaces</li>
-            <li>Controls expertise</li>
-            <li>Multi-gigabit transceivers</li>
-            <li>Certifications (FCC, UL, CE, various military)</li>
-            </ul> 
+            
+            <div className='list_type'>
+                <div>• Turn-key board design and board layout services</div>
+                <div>• Prototyping to medium rate production</div>
+                <div>• Design for test</div>
+                <div>• High density PCB design capabidivties</div>
+                <div>• High speed capabidivties</div>
+                <div>• Small form factor</div>
+                <div>• Low power expertise</div>
+                <div>• Extensive video/camera interfaces</div>
+                <div>• Extensive comm interfaces</div>
+                <div>• Controls expertise</div>
+                <div>• Multi-gigabit transceivers</div>
+                <div>• Certifications (FCC, UL, CE, various military)</div>
+            </div>
+           
+            
             
             </Col> 
             </Container>

@@ -5,7 +5,7 @@ from authentication.models import User
 
 
 class ContactUs(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     fullname = models.CharField(max_length=255)
     email = models.EmailField()

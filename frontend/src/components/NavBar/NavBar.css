@@ -18,6 +18,10 @@ hr {
   margin: 0;
 }
 
+.navBarList {
+  margin-bottom: 0 !important;
+}
+
 li {
   font-size: 1rem;
   list-style: none;

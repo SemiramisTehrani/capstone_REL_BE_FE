@@ -3,3 +3,11 @@ ul.a {
     list-style-type: circle;
     text-align: left;
   }
+
+  .unordered_list {
+    list-style-type: disc;
+  }
+
+  .list_type {
+    text-align: left;
+  }
