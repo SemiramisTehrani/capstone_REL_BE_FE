@@ -1,5 +1,5 @@
 // 09/11/2022 : Semi , started contact us 
-// 09/22/2022 : verification 
+// 09/22/2022 : verification , not connecting to the backend
 
 
 // import React from 'react';
