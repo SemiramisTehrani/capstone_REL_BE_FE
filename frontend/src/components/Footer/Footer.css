@@ -1,3 +1,5 @@
+/* Semi 9/22/2022 : Footer is done */
+
 footer {
   /*position: fixed;*/
   bottom: 0;
@@ -6,4 +8,5 @@ footer {
   padding: 1rem;
   text-align: center;
   width: 100%;
+  background-color:rgb(65, 118, 144);
 }

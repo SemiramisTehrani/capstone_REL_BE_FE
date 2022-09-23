@@ -50,7 +50,11 @@ function App() {
           <Route path="/electronics" element={<Electronics/>} />
           <Route path="/services" element={<Services/>} />
           <Route path="/pcb_layout" element={<PCB />} />
+          
           <Route path="/contactus" element={<Contactus />} />
+          
+          <Route path="/registeration" element={<RegistrationForm />} />
+          <Route path="/login" element={<LoginForm />} />
       </Routes>
       {/* <Autoemail /> */}
 
