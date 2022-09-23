@@ -2,9 +2,38 @@ import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
 
+const registerUser = async (registerData) => {
+  try {
+    let finalData = {
+      username: registerData.username,
+      password: registerData.password,
+      email: registerData.email,
+      first_name: registerData.firstName,
+      last_name: registerData.lastName,
+    };
+    let response = await fetch(`http://127.0.0.1:8000/api/auth/register/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(finalData)
+    });
+    if (response.status === 201) {
+      console.log("Successful registration! Log in to access token");
+      //setIsServerError(false);
+      //navigate("/login");
+    } else {
+      //navigate("/register");
+    }
+  } catch (error) {
+    console.log(error.response.data);
+  }
+};
+
 const RegistrationForm = () => {
  //const { registerUser } = useContext(AuthContext);
-  const registerUser = useContext(AuthContext);
+  //const {registerUser} = AuthContext
+  //const registerUser = useContext(AuthContext);
   console.log("AuthContext", AuthContext)
   console.log("Register User", registerUser)
   const defaultValues = {
@@ -74,7 +103,7 @@ const RegistrationForm = () => {
           NOTE: Make this an uncommon password with characters, numbers, and
           special characters!
         </p>
-        <button>Register!</button>
+        <button className="send">Register!</button>
       </form>
     </div>
   );

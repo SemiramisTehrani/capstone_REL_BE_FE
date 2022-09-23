@@ -4,12 +4,42 @@ import useCustomForm from "../../hooks/useCustomForm";
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
 
+const loginUser = async (loginData) => {
+  try {
+    let response = await fetch(`http://127.0.0.1:8000/api/auth/login/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(loginData)
+    });
+    if (response.status === 200) {
+      localStorage.setItem("token", JSON.stringify(response.data.access));
+      //setToken(JSON.parse(localStorage.getItem("token")));
+      //let loggedInUser = jwtDecode(response.data.access);
+      //setUser(setUserObject(loggedInUser));
+      //setIsServerError(false);
+      //navigate("/");
+    } else {
+      //navigate("/register");
+    }
+  } catch (error) {
+    console.log(error.response.data);
+    //setIsServerError(true);
+    //navigate("/register");
+  }
+};
+
 const LoginForm = () => {
-  const { loginUser, isServerError } = useContext(AuthContext);
+  //const { loginUser, isServerError } = useContext(AuthContext);
+  //const loginUser = undefined;
+  const isServerError = undefined;
+
+
   const defaultValues = { username: "", password: "" };
-  const [formData, handleInputChange, handleSubmit, reset] = useCustomForm(
-    defaultValues,
-    loginUser
+  const {formData, handleInputChange, handleSubmit, reset} = useCustomForm(
+    loginUser,
+    defaultValues
   );
 
   useEffect(() => {
@@ -33,7 +63,7 @@ const LoginForm = () => {
         <label>
           Password:{" "}
           <input
-            type="text"
+            type="password"
             name="password"
             value={formData.password}
             onChange={handleInputChange}
@@ -43,7 +73,7 @@ const LoginForm = () => {
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
         <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
+        <button className="send">Login!</button>
       </form>
     </div>
   );
