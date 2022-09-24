@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from pathlib import Path
 
+static_path = Path(__file__).resolve().parent.parent / 'media'
+print(static_path) 
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/cars/', include('cars.urls')),
     path('api/contactus/', include('contactus.urls')),
-    path('api/consultation/', include('consultation.urls')),    
+    path('api/consultation/', include('consultation.urls')), 
 ]
+
+urlpatterns += static('media/', document_root=static_path)  

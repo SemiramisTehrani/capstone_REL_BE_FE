@@ -20,6 +20,7 @@ const registerUser = async (registerData) => {
     });
     if (response.status === 201) {
       console.log("Successful registration! Log in to access token");
+      window.location = '/login'
       //setIsServerError(false);
       //navigate("/login");
     } else {
@@ -50,6 +51,7 @@ const RegistrationForm = () => {
 
   return (
     <div className="container">
+      <h3>Welcome New User!</h3>
       <form className="form registrationForm" onSubmit={handleSubmit}>
         
         <label>

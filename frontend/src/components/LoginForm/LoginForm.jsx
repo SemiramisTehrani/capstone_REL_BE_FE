@@ -3,6 +3,7 @@ import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
+import RegistrationForm from "../RegistrationForm/RegistrationForm";
 
 const loginUser = async (loginData) => {
   try {
@@ -14,17 +15,20 @@ const loginUser = async (loginData) => {
       body: JSON.stringify(loginData)
     });
     if (response.status === 200) {
-      localStorage.setItem("token", JSON.stringify(response.data.access));
+      let data = await response.json()
+      localStorage.setItem("token", JSON.stringify(data.access));
+      window.location = '/upload'
       //setToken(JSON.parse(localStorage.getItem("token")));
       //let loggedInUser = jwtDecode(response.data.access);
       //setUser(setUserObject(loggedInUser));
       //setIsServerError(false);
       //navigate("/");
+
     } else {
       //navigate("/register");
     }
   } catch (error) {
-    console.log(error.response.data);
+    console.log(error);
     //setIsServerError(true);
     //navigate("/register");
   }
@@ -50,6 +54,7 @@ const LoginForm = () => {
 
   return (
     <div className="container">
+      <h3>Welcome! Please Sign in or Register</h3>
       <form className="form" onSubmit={handleSubmit}>
         <label>
           Username:{" "}
@@ -72,7 +77,7 @@ const LoginForm = () => {
         {isServerError ? (
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
-        <Link to="/register">Click to register!</Link>
+        <Link to="/registration">Click to register!</Link>
         <button className="send">Login!</button>
       </form>
     </div>

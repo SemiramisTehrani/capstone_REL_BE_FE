@@ -17,13 +17,16 @@ function DocumentUpload() {
                 document: documentRef.current.value
             }
             console.log(data)
+            let token = JSON.parse(localStorage.getItem('token'))
             const url = 'http://127.0.0.1:8000/api/consultation/add/'
             fetch(url, {
                 method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + token
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                
             })
             .then(response => {
                 // Once the backend has received and sent back a response
