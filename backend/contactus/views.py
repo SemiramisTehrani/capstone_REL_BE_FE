@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view, permission_classes
 
 from .models import ContactUs
 from .serializers import ContactusSerializer
+from django.db import connection
 
 
 # Create your views here.

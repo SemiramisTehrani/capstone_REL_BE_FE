@@ -5,7 +5,7 @@ from authentication.models import User
 
 
 class Consultation(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     description = models.CharField(max_length=255, blank=True)
     document = models.FileField(upload_to='media/documents/')

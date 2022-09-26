@@ -12,9 +12,10 @@ function DocumentUpload() {
 
         const handleSubmit = (event) => {
             event.preventDefault()
+            console.log(documentRef.current.files[0])
             const data = {
                 description: descriptionRef.current.value,
-                document: documentRef.current.value
+                document: JSON.stringify(documentRef.current.files[0])
             }
             console.log(data)
             let token = JSON.parse(localStorage.getItem('token'))
@@ -26,6 +27,7 @@ function DocumentUpload() {
                     Authorization: "Bearer " + token
                 },
                 body: JSON.stringify(data),
+                file: documentRef.current.value
                 
             })
             .then(response => {
@@ -53,6 +55,7 @@ function DocumentUpload() {
                 className=""
                 ref={documentRef}
                 tabindex="2" 
+                multiple
                 />
 
                 <label for="description">Description</label>
