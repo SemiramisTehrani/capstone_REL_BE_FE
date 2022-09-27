@@ -14,6 +14,30 @@ from .serializers import ConsultationSerializer
 
 
 # Create your views here.
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_consultation(request):
+    # print("Request Data")
+    # print(request.data)
+    # print("Request User")
+    # print(request.user)
+    # print("Request Method")
+    # print(request.method)
+
+    consultations = Consultation.objects.all()
+    serializer = ConsultationSerializer(consultations, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+    # u = request.user
+    #print(u)
+        
+        #if request.user.is_authenticated: 
+            
+        #else:
+        #    return redirect("/")
+
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def add_consultation(request):
@@ -35,27 +59,4 @@ def add_consultation(request):
     serializer.is_valid(raise_exception = True)
     serializer.save()
     return Response(serializer.data, status = status.HTTP_201_CREATED)
-
-
-
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def get_all_consultation(request):
-    print("Request Data")
-    print(request.data)
-    print("Request User")
-    print(request.user)
-    print("Request Method")
-    print(request.method)
-
-    consultations = Consultation.objects.all()
-    serializer = ConsultationSerializer(consultations, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
-    #u = request.user
-    #print(u)
-        
-        #if request.user.is_authenticated: 
-            
-        #else:
-        #    return redirect("/")
         

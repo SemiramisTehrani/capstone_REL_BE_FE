@@ -31,8 +31,10 @@ import Electronics from "./components/Electronics/Electronics";
 import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import PCB from "./components/PCB/PCB";
+import Reliability from "./components/Reliability/Reliability";
 import Contactus from "./components/ContactUs/ContactUs";
 import DocumentUpload from "./components/DocumentUpload/DocumentUpload";
+
 
 //Util Imports
 // import PrivateRoute from "./utils/PrivateRoute";
@@ -51,9 +53,9 @@ function App() {
           <Route path="/electronics" element={<Electronics/>} />
           <Route path="/services" element={<Services/>} />
           <Route path="/pcb_layout" element={<PCB />} />
+          <Route path="/Reliability" element={<Reliability />} />
           
           <Route path="/contactus" element={<Contactus />} />
-          
           <Route path="/registration" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
 
