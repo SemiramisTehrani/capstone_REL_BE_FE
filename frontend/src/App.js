@@ -35,6 +35,8 @@ import Reliability from "./components/Reliability/Reliability";
 import Contactus from "./components/ContactUs/ContactUs";
 import DocumentUpload from "./components/DocumentUpload/DocumentUpload";
 
+import Schematic from "./components/Schematic/Schematic";
+
 
 //Util Imports
 // import PrivateRoute from "./utils/PrivateRoute";
@@ -54,6 +56,7 @@ function App() {
           <Route path="/services" element={<Services/>} />
           <Route path="/pcb_layout" element={<PCB />} />
           <Route path="/Reliability" element={<Reliability />} />
+          <Route path="/Schematic_development" element={<Schematic />} />
           
           <Route path="/contactus" element={<Contactus />} />
           <Route path="/registration" element={<RegistrationForm />} />
