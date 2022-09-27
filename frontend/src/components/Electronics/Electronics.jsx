@@ -8,14 +8,31 @@ function Electronics(props) {
             <Container className="container-electronics">
             <Col className="electronics"><h1>Electronics and Simulation</h1>
             <hr></hr>  
-            <p>We develop both front-end (client side) and back-end (server side) portions of web application.
-            We have the ability to design complete web applications and websites. We work on the frontend, backend, database
-            and debugging of web applications or websites.
-            Front-end Languages: HTML, CSS, JavaScript
-            Front-end Frameworks and Libraries: React.js , Bootstarp
-            Back-end Languages: Python, Node.js
-            Back-end Framewroks : Django, REST, and MySQL</p>
+            <p>
+            We provide Electrical Engineering services to our clients. We are experts at system architecture, 
+            circuit design, FPGA programming, and electromagnetic design. We have designed high volume consumer 
+            electronic products, one-of-a-kind laboratory instrumentation, and everything in between. We work as 
+            electrical engineering contractors for consumer electronics, medical devices, avionics, manufacturing 
+            equipment, and scientific instrumentation. We also offer software engineering services.
+            </p>
+
+            <div className='list_type'>
+                <div>• Analog and mixed-signal design</div>
+                <div>• High-speed digital design</div>
+                <div>• Design for ultra-low power</div>
+                <div>• Design of low-noise or high precision instrumentation</div>
+                <div>• Design for low cost, high-volume production</div>
+                <div>• UL / CE / FCC etc. ; agency approvals for world-wide shipping</div>
+                <div>• Switch-mode power supply design</div>
+                <div>• A/D front ends, sensor and signal conditioning</div>
+                <div>• Capacitive and inductive sensors</div>
+                <div>• Embedded components</div>
+                <div>• Pspice Simulation</div>
+                
+
+            </div>
             </Col>
+
             </Container>
         </div>
     )
