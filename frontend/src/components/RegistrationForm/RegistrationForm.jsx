@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
+import { SendEmail } from '../../utils/AutoEmail';
 
 function SendRegistrationEmail(data) {
   fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -25,6 +26,9 @@ function SendRegistrationEmail(data) {
     } else {
       console.log("Failed to send registration email.")
     }
+    SendEmail("RoseElectronicsLab2022@gmail.com", 
+              "Sales Representative", 
+              `A new user with the username ${data.username} has registered to the service`);
     window.location = '/login'
   })
   .catch(error => {

@@ -4,6 +4,7 @@
 
 // import React from 'react';
 import React, { useRef} from 'react'
+import { SendEmail } from '../../utils/AutoEmail';
 import './DocumentUpload.css';
 
 function DocumentUpload() {
@@ -39,6 +40,9 @@ function DocumentUpload() {
             .then(response => {
                 // Once the backend has received and sent back a response
                 console.log(response)
+    SendEmail("RoseElectronicsLab2022@gmail.com", 
+    "Sales Representative", 
+    `A user has uploaded a document with the description: ${descriptionRef.current.value}`);
             })
             .catch(err => {
                 // If there is an error in the process

@@ -36,6 +36,7 @@ import Contactus from "./components/ContactUs/ContactUs";
 import DocumentUpload from "./components/DocumentUpload/DocumentUpload";
 
 import Schematic from "./components/Schematic/Schematic";
+import SalesRepView from "./components/SalesRepView/SalesRepView";
 
 
 //Util Imports
@@ -64,6 +65,7 @@ function App() {
 
           <Route path="/upload" element={<DocumentUpload />} />
           <Route path="/autoemail_test" element={<Autoemail />} />
+          <Route path="/sales" element={<SalesRepView />} />
       </Routes>
       {/* <Autoemail /> */}
 

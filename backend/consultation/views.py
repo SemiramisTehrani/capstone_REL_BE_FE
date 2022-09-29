@@ -24,8 +24,10 @@ def get_all_consultation(request):
     # print(request.user)
     # print("Request Method")
     # print(request.method)
+    print('In Get Request')
 
     consultations = Consultation.objects.all()
+    print(consultations)
     serializer = ConsultationSerializer(consultations, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
     # u = request.user
@@ -47,6 +49,7 @@ def add_consultation(request):
     print(request.user)
     print("Request Method")
     print(request.method)
+    print('In POSTGet Request')
 
     new_consultation = request.data
     u_data = User.objects.get(username=request.user)

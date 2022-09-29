@@ -4,6 +4,7 @@
 
 // import React from 'react';
 import React, { useRef} from 'react'
+import { SendEmail } from '../../utils/AutoEmail';
 import './ContactUs.css';
 
 import axios from 'axios'
@@ -34,7 +35,15 @@ function Contactus() {
             })
             .then(response => {
                 // Once the backend has received and sent back a response
-                console.log(response)
+                //console.log(response)
+                
+                SendEmail("RoseElectronicsLab2022@gmail.com", 
+                "Sales Representative", 
+                `A user has asked a question or given feedback. 
+Name: ${data.fullname}. 
+Email: ${data.email}. 
+Subject: ${data.subject}. 
+Message: ${data.message}`);
             })
             .catch(err => {
                 // If there is an error in the process
