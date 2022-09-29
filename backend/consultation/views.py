@@ -49,13 +49,14 @@ def add_consultation(request):
     print(request.method)
 
     new_consultation = request.data
-    u_data = User.objects.get(username=u)
+    u_data = User.objects.get(username=request.user)
     print(str(u_data))
     new_consultation['user_id'] = u_data.id # request.user.id
     print(new_consultation['user_id'])
-    print(new_consultation)
-    serializer = ConsultationSerializer(data = request.data)
-    print(serializer)
+    #print(new_consultation)
+    #serializer = ConsultationSerializer(data = request.data)
+    serializer = ConsultationSerializer(data = new_consultation)
+    #print(serializer)
     serializer.is_valid(raise_exception = True)
     serializer.save()
     return Response(serializer.data, status = status.HTTP_201_CREATED)

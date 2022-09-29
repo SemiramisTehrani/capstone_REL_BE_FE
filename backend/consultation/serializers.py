@@ -9,4 +9,5 @@ class ConsultationSerializer(serializers.ModelSerializer):
         depth = 1
         
     user_id = serializers.IntegerField (write_only = True)
+    document = serializers.FileField()
     

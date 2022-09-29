@@ -13,9 +13,15 @@ function DocumentUpload() {
         const handleSubmit = (event) => {
             event.preventDefault()
             console.log(documentRef.current.files[0])
+            const formData = new FormData();
+            formData.set('description', documentRef.current.value)
+            
+            for (const file of documentRef.current.files) {
+                formData.append('document', file)
+            }
             const data = {
                 description: descriptionRef.current.value,
-                document: JSON.stringify(documentRef.current.files[0])
+                document: documentRef.current.value
             }
             console.log(data)
             let token = JSON.parse(localStorage.getItem('token'))
@@ -23,10 +29,10 @@ function DocumentUpload() {
             fetch(url, {
                 method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
+                    //"Content-Type": "application/json",
                     Authorization: "Bearer " + token
                 },
-                body: JSON.stringify(data),
+                body: formData,
                 file: documentRef.current.value
                 
             })
@@ -50,7 +56,7 @@ function DocumentUpload() {
                 <label for="document">Document</label>
                 <input 
                 type="file" 
-                name="document"
+                name="files"
                 id="document"
                 className=""
                 ref={documentRef}

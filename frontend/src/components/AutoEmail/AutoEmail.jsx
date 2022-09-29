@@ -10,7 +10,7 @@ export default function Autoemail() {
 
     // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')    
     // emailjs.sendForm('gmail', 'youtube_template', e.target, 'user_JABO21I8Gm6sxByJH17Nu')
-    emailjs.sendForm('service_ukwkn5x', 'template_eyvh5rn', e.target, 'RmNgCopFUrZDWiDmP')
+    emailjs.sendForm('service_n4kyn9j', 'template_eyvh5rn', e.target, 'RmNgCopFUrZDWiDmP')
 
         .then((result) => {
             console.log(result.text);

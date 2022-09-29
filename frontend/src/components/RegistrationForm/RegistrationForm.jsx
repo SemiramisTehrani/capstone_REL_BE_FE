@@ -2,6 +2,37 @@ import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
 
+function SendRegistrationEmail(data) {
+  fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      service_id: 'service_n4kyn9j',
+      template_id: 'template_eyvh5rn',
+      user_id: 'RmNgCopFUrZDWiDmP',
+      template_params: {
+        email: data.email,
+        to_name: data.first_name + " " + data.last_name,
+        message: 'Welcome! You are now registered for our service. Thank you for registering.'
+      }
+    })
+  })
+  .then(response => {
+    if (response.status === 201) {
+      console.log("Successful registration! Log in to access token");
+    } else {
+      console.log("Failed to send registration email.")
+    }
+    window.location = '/login'
+  })
+  .catch(error => {
+    console.log(error)
+    console.log("Failed to send registration email.")
+  })
+}
+
 const registerUser = async (registerData) => {
   try {
     let finalData = {
@@ -19,8 +50,8 @@ const registerUser = async (registerData) => {
       body: JSON.stringify(finalData)
     });
     if (response.status === 201) {
+      SendRegistrationEmail(finalData)
       console.log("Successful registration! Log in to access token");
-      window.location = '/login'
       //setIsServerError(false);
       //navigate("/login");
     } else {

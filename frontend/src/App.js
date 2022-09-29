@@ -63,6 +63,7 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
 
           <Route path="/upload" element={<DocumentUpload />} />
+          <Route path="/autoemail_test" element={<Autoemail />} />
       </Routes>
       {/* <Autoemail /> */}
 
