@@ -1,3 +1,4 @@
+import json
 from xmlrpc.client import ResponseError
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
@@ -29,6 +30,8 @@ def get_all_consultation(request):
     consultations = Consultation.objects.all()
     print(consultations)
     serializer = ConsultationSerializer(consultations, many=True)
+    #return Response(json.dumps(consultations), status=status.HTTP_200_OK)
+    #serializer = serializers.serialize('json', consultations)
     return Response(serializer.data, status=status.HTTP_200_OK)
     # u = request.user
     #print(u)
@@ -63,4 +66,27 @@ def add_consultation(request):
     serializer.is_valid(raise_exception = True)
     serializer.save()
     return Response(serializer.data, status = status.HTTP_201_CREATED)
+
+
+
+    # Working on multiple files
+   #print("Files", request.FILES)
+   #print(request.data)
+   #for file in request.FILES['document']:
+   #    new_consultation = {
+   #        "description": request.data['description'],
+   #        "document": file
+   #    }
+   #    u_data = User.objects.get(username=request.user)
+   #    new_consultation['user_id'] = u_data.id # request.user.id
+   #    #print(new_consultation)
+   #    #serializer = ConsultationSerializer(data = request.data)
+   #    print(new_consultation)
+   #    serializer = ConsultationSerializer(data = new_consultation)
+   #    #print(serializer)
+   #    serializer.is_valid(raise_exception = True)
+   #    serializer.save()
+
+
+   #return Response(serializer.data, status = status.HTTP_201_CREATED)
         
