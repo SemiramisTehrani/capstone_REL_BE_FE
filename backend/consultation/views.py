@@ -1,6 +1,7 @@
 import json
 from xmlrpc.client import ResponseError
-from django.http import JsonResponse
+import django
+from django.http import JsonResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from rest_framework import status
@@ -27,6 +28,9 @@ def get_all_consultation(request):
     # print("Request Method")
     # print(request.method)
     print('In Get Request')
+
+    if request.user.username != 'sales':
+        return HttpResponseForbidden()
 
     consultations = Consultation.objects.select_related('user')
     return_value = []
@@ -63,18 +67,19 @@ def get_all_consultation(request):
 @permission_classes([IsAuthenticated])
 def add_consultation(request):
     print("Request Data")
-    print(request.data)
-    print("Request User")
-    print(request.user)
-    print("Request Method")
-    print(request.method)
-    print('In POSTGet Request')
+    print(len(request.data['document']))
+   #print("Request User")
+   #print(request.user)
+   #print("Request Method")
+   #print(request.method)
+   #print('In POSTGet Request')
 
+    
     new_consultation = request.data
     u_data = User.objects.get(username=request.user)
-    print(str(u_data))
+    #print(str(u_data))
     new_consultation['user_id'] = u_data.id # request.user.id
-    print(new_consultation['user_id'])
+    #print(new_consultation['user_id'])
     #print(new_consultation)
     #serializer = ConsultationSerializer(data = request.data)
     serializer = ConsultationSerializer(data = new_consultation)

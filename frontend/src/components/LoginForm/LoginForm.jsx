@@ -17,7 +17,12 @@ const loginUser = async (loginData) => {
     if (response.status === 200) {
       let data = await response.json()
       localStorage.setItem("token", JSON.stringify(data.access));
-      window.location = '/upload'
+      localStorage.setItem("username", loginData.username)
+      if (loginData.username == 'sales') {
+        window.location = '/sales'
+      } else {
+        window.location = '/upload'
+      }
       //setToken(JSON.parse(localStorage.getItem("token")));
       //let loggedInUser = jwtDecode(response.data.access);
       //setUser(setUserObject(loggedInUser));

@@ -1,3 +1,4 @@
+from django.http import HttpResponseForbidden
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from rest_framework import status
@@ -18,6 +19,9 @@ from django.db import connection
 def get_all_contactus(request):
     
     if request.method == 'GET' : 
+        print(request.user)
+        if request.user.username != 'sales':
+            return HttpResponseForbidden()
         contacts = ContactUs.objects.all()
         serializer = ContactusSerializer(contacts, many=True)
         return Response(serializer.data)

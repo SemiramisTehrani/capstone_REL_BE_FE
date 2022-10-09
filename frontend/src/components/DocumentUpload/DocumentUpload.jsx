@@ -43,12 +43,13 @@ function DocumentUpload() {
     SendEmail("RoseElectronicsLab2022@gmail.com", 
     "Sales Representative", 
     `A user has uploaded a document with the description: ${descriptionRef.current.value}`);
+                document.getElementById("upload_output").innerHTML = "Document successfully uploaded"
             })
             .catch(err => {
                 // If there is an error in the process
-
+                document.getElementById("upload_output").innerHTML = "Error Uploading Document"
             })
-            alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎")
+            document.getElementById("upload_output").innerHTML = "Uploading..."
         }
     
     return(
@@ -78,6 +79,9 @@ function DocumentUpload() {
                 />
                 <button type="submit" className="send">Send</button>
             </form>
+            <div id='upload_output'>
+
+            </div>
         </div>
     )
 }

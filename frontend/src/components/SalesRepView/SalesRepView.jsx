@@ -9,7 +9,7 @@ function GetDocuments() {
         method: 'get',
         url: 'http://127.0.0.1:8000/api/consultation/all/',
         headers: {
-            
+            Authorization: "Bearer " + token
         }
     })
 }
@@ -20,7 +20,7 @@ function GetContacts() {
         method: 'get',
         url: 'http://127.0.0.1:8000/api/contactus/all/',
         headers: {
-            
+            Authorization: "Bearer " + token
         }
     })
 }
@@ -51,6 +51,8 @@ function RenderDocumentView() {
     })
     .catch(error => {
         console.log(error)
+        let itemsContainer = document.getElementById('items');
+        itemsContainer.innerHTML += "You are not allowed to view this page"
     })
 }
 
@@ -74,6 +76,8 @@ function RenderContactstView() {
     })
     .catch(error => {
         console.log(error)
+        let itemsContainer = document.getElementById('contacts');
+        itemsContainer.innerHTML += "You are not allowed to view this page"
     })
 }
 

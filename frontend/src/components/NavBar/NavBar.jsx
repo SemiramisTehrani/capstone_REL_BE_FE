@@ -34,11 +34,17 @@ const NavBar = () => {
             <Link to="/contactus" className='NavButton'>
               <b>Contact</b>
             </Link>
-            <Link to="/registration" className='NavButton'>
-              <b>Registration</b>
+            <Link id="register_button" to={(localStorage.getItem('username') != null) ? "/logout" : "/registration"} className='NavButton'>
+              <b>{(localStorage.getItem('username') != null) ? 
+                  'Logout' :
+                  "Register"}</b>
             </Link>
-            <Link to="/login" className='NavButton'>
-              <b>Login</b>
+            <Link id='user_button' to={(localStorage.getItem('username') != null) ? "/upload" : "/login"} className='NavButton'>
+              <b>{
+                (localStorage.getItem('username') != null) ? 
+                  `Logged in as ${localStorage.getItem('username')}` :
+                  "Login"
+              }</b>
             </Link>
           </li>
         </ul>
