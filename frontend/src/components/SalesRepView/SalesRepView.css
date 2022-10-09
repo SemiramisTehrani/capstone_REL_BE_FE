@@ -1,3 +1,33 @@
 .center-align {
     text-align: center;
 }
+
+#contacts, #items {
+    display: grid;
+    grid-gap: 15px;
+}
+
+.contact_message {
+    display: grid;
+    grid-gap: 5px;
+    background-color: rgb(240, 253, 253);
+    padding: 3px;
+}
+
+.contact_details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 12px;
+}
+
+.sales_content {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 800px) {
+    .sales_content {
+        grid-template-columns: 1fr;
+    }
+}

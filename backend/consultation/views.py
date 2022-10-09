@@ -1,5 +1,6 @@
 import json
 from xmlrpc.client import ResponseError
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from rest_framework import status
@@ -27,12 +28,27 @@ def get_all_consultation(request):
     # print(request.method)
     print('In Get Request')
 
-    consultations = Consultation.objects.all()
+    consultations = Consultation.objects.select_related('user')
+    return_value = []
+    for c in consultations:
+        item = {
+            "document": c.document.url,
+            "description": c.description,
+            "first_name": c.user.first_name,
+            "last_name": c.user.last_name,
+            "email": c.user.email,
+            "id": c.id
+        }
+        return_value.append(item)
+        print(c.user)
     print(consultations)
-    serializer = ConsultationSerializer(consultations, many=True)
+    #serializer = ConsultationSerializer(consultations, many=True)
     #return Response(json.dumps(consultations), status=status.HTTP_200_OK)
     #serializer = serializers.serialize('json', consultations)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+
+    #return Response(serializer.data, status=status.HTTP_200_OK)
+    return JsonResponse({"data": return_value}, status=status.HTTP_200_OK)
+
     # u = request.user
     #print(u)
         
