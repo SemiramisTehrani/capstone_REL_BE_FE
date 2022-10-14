@@ -138,7 +138,7 @@ const RegistrationForm = () => {
         </label>
         <p style={{ fontSize: "12px" }}>
           NOTE: Make this an uncommon password with characters, numbers, and
-          special characters!
+          special characters . It must be at least 8 characters long!
         </p>
         <button className="send">Register!</button>
       </form>

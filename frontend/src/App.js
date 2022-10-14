@@ -38,6 +38,7 @@ import DocumentUpload from "./components/DocumentUpload/DocumentUpload";
 import Schematic from "./components/Schematic/Schematic";
 import SalesRepView from "./components/SalesRepView/SalesRepView";
 import Logout from "./components/Logout/Logout";
+import LogoutConfirm from "./components/Logout/LogoutConfirm";
 
 
 //Util Imports
@@ -68,6 +69,8 @@ function App() {
           <Route path="/autoemail_test" element={<Autoemail />} />
           <Route path="/sales" element={<SalesRepView />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/logout_confirm" element={<LogoutConfirm />} />
+        
       </Routes>
       {/* <Autoemail /> */}
 

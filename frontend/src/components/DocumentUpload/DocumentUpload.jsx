@@ -7,12 +7,54 @@ import React, { useRef} from 'react'
 import { SendEmail } from '../../utils/AutoEmail';
 import './DocumentUpload.css';
 
+async function UploadSingleDocument(file, description) {
+
+}
+
+async function UploadDocuments(files, description, doc) {
+    try {
+        document.getElementById("upload_output").innerHTML = "Uploading..."
+        for (const file of files) {
+            const formData = new FormData();
+            formData.set('description', description)
+            formData.append('document', file)
+            const data = {
+                description: description,
+                document: file
+            }
+            console.log(data)
+            let token = JSON.parse(localStorage.getItem('token'))
+            const url = 'http://127.0.0.1:8000/api/consultation/add/'
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    //"Content-Type": "application/json",
+                    Authorization: "Bearer " + token
+                },
+                body: formData,
+                file: doc//documentRef.current.value
+            })
+        }
+        document.getElementById("upload_output").innerHTML = "Documents successfully uploaded..."
+        SendEmail("RoseElectronicsLab2022@gmail.com", 
+    "Sales Representative", 
+    `A user has uploaded document(s) with the description: ${description}`);
+            
+    } catch (e) {
+        document.getElementById("upload_output").innerHTML = "Error uploading documents..."
+    }
+    
+}
+
 function DocumentUpload() {
         const documentRef  = useRef(null)
         const descriptionRef  = useRef(null)
 
         const handleSubmit = (event) => {
             event.preventDefault()
+
+            UploadDocuments(documentRef.current.files, descriptionRef.current.value, documentRef.current.value)
+            return;
             console.log(documentRef.current.files[0])
             const formData = new FormData();
             formData.set('description', documentRef.current.value)
