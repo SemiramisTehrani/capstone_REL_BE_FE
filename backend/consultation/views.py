@@ -37,6 +37,7 @@ def get_all_consultation(request):
     for c in consultations:
         item = {
             "document": c.document.url,
+            "uploaded_at": c.uploaded_at,
             "description": c.description,
             "first_name": c.user.first_name,
             "last_name": c.user.last_name,

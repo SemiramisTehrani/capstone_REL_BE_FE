@@ -31,6 +31,7 @@ function RenderDocumentView() {
         //console.log(r)
         let itemsContainer = document.getElementById('items');
         itemsContainer.innerHTML = ""
+        console.log(r.data.data)
         r.data.data.forEach(consultation => {
             //console.log(consultation)
             itemsContainer.innerHTML += 
@@ -44,6 +45,7 @@ function RenderDocumentView() {
                     <div class="contact_details">
                         <div>${consultation.first_name} ${consultation.last_name}</div>
                         <div>${consultation.email}</div>
+                        <div>${new Date(consultation.uploaded_at).toLocaleString()}</div>
                     </div>
                 </div>
                 `
