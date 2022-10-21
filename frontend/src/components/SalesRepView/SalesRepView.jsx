@@ -30,26 +30,52 @@ function RenderDocumentView() {
     .then(r => {
         //console.log(r)
         let itemsContainer = document.getElementById('items');
-        itemsContainer.innerHTML = ""
+        let html = 
+        `
+        <h2 style='text-align: center;'>Documents Uploaded by Users</h2>
+        <div class="document_row">
+        <div>Upload Date</div>
+            <div>Customer Name</div>
+            <div>Email</div>
+            <div>Description</div>
+        `
         console.log(r.data.data)
         r.data.data.forEach(consultation => {
             //console.log(consultation)
-            itemsContainer.innerHTML += 
+            html += 
+                //`
+                //<div class="contact_message">
+                //    <div>
+                //        <a href="http://localhost:8000/${consultation.document.substring(7)}">
+                //            ${consultation.description}
+                //        </a>
+                //    </div>
+                //    <div class="contact_details">
+                //        <div>${consultation.first_name} ${consultation.last_name}</div>
+                //        <div>${consultation.email}</div>
+                //        <div>${new Date(consultation.uploaded_at).toLocaleString()}</div>
+                //    </div>
+                //</div>
+                //`
                 `
-                <div class="contact_message">
+                
                     <div>
-                        <a href="http://localhost:8000/${consultation.document.substring(7)}">
-                            ${consultation.description}
+                        ${new Date(consultation.uploaded_at).toLocaleString()}
+                    </div>
+                    <div>
+                        ${consultation.first_name} ${consultation.last_name}
+                    </div>
+                    <div>
+                        ${consultation.email}
+                    </div>
+                    <div>
+                    <a href="http://localhost:8000/${consultation.document.substring(7)}">
+                        ${consultation.description}
                         </a>
                     </div>
-                    <div class="contact_details">
-                        <div>${consultation.first_name} ${consultation.last_name}</div>
-                        <div>${consultation.email}</div>
-                        <div>${new Date(consultation.uploaded_at).toLocaleString()}</div>
-                    </div>
-                </div>
                 `
         })
+        itemsContainer.innerHTML += html + "</div>"
     })
     .catch(error => {
         console.log(error)
@@ -61,20 +87,26 @@ function RenderDocumentView() {
 function RenderContactstView() {
     GetContacts()
     .then(r => {
+        let html = "<h2 style='text-align: center;'>Contact List</h2><div class='contact_row'>"
+        html += `
+        <div>Name</div>
+        <div>Email</div>
+        <div>Message</div>
+        `
         //console.log(r)
         let itemsContainer = document.getElementById('contacts');
         itemsContainer.innerHTML = ""
         r.data.forEach(contact => {
             //console.log(contact)
-            itemsContainer.innerHTML += 
-                `<div class="contact_message">
-                    <div class="contact_details">
-                        <div><a>${contact.fullname}</a></div>
-                        <div>${contact.email}</div>
-                    </div>
+            html += 
+                `
+                <div><a>${contact.fullname}</a></div>
+                <div><a href="mailto:${contact.email}">${contact.email}</a></div>
                     <div>${contact.message}</div>
-                </div>`
+                `
         })
+        html += `</div>`
+        itemsContainer.innerHTML = html
     })
     .catch(error => {
         console.log(error)
@@ -84,16 +116,15 @@ function RenderContactstView() {
 }
 
 function SalesRepView(props) {
-    RenderDocumentView()
     RenderContactstView()
+    RenderDocumentView()
     return(
         <div>
             <Container className="container-electronics">
             <Col className="sales_rep_view">
                 <h1>Sales Rep View</h1>
                 <div className='sales_content'>
-                        <h2 className='center-align'>Contact List</h2>
-                        <h2 className='center-align'>Documents Uploaded by Users</h2>
+                        
                     <div>
                         <div id="contacts"></div>
                     </div>

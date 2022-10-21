@@ -12,6 +12,11 @@ async function UploadSingleDocument(file, description) {
 }
 
 async function UploadDocuments(files, description, doc) {
+    if (description.length == 0) {
+        document.getElementById("upload_output").innerHTML = "Please enter a description."
+        return;
+    }
+
     try {
         document.getElementById("upload_output").innerHTML = "Uploading..."
         for (const file of files) {

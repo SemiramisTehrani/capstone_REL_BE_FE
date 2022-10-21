@@ -20,10 +20,40 @@
     font-size: 12px;
 }
 
+.contact_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    text-align: center;
+}
+
+.document_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    text-align: center;
+}
+
+.document_row>div:nth-child(8n-4), .document_row>div:nth-child(8n-5), .document_row>div:nth-child(8n-6), .document_row>div:nth-child(8n-7) {
+    background-color: rgb(232, 250, 255);
+}
+
+.document_row>div:nth-child(1), .document_row>div:nth-child(2), .document_row>div:nth-child(3), .document_row>div:nth-child(4) {
+    font-weight: bold;
+}
+
+.contact_row>div:nth-child(6n-4), .contact_row>div:nth-child(6n-5), .contact_row>div:nth-child(6n-3) {
+    background-color: rgb(232, 250, 255);
+}
+
+.contact_row>div:nth-child(1), .contact_row>div:nth-child(2), .contact_row>div:nth-child(3) {
+    font-weight: bold;
+}
+
 .sales_content {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 @media screen and (max-width: 800px) {

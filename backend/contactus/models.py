@@ -11,3 +11,4 @@ class ContactUs(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=255)
     message = models.TextField()
+    # uploaded_at = models.DateTimeField(auto_now_add=True)
