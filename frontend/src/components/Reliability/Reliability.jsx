@@ -7,7 +7,7 @@ function Reliability(props) {
     return(
         <div>
             <Container className="container-Reliability">
-            <Col className="Reliability"><h1>Reliabilityt</h1>
+            <Col className="Reliability"><h1>Reliability</h1>
             <hr></hr>  
             <p> We provide Reliability Engineering services  or reliable engineering consulting services and 
                 assessment testing  to help you undertake product reliability improvement initiatives in business 
